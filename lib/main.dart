@@ -12,6 +12,7 @@ import 'package:mitch_app/widgets/rounded_btn.dart';
 import 'package:mitch_app/widgets/listview_listtile.dart';
 import 'package:mitch_app/widgets/listview_listtile.dart';
 import 'package:mitch_app/widgets/expanded_flex.dart';
+import 'package:mitch_app/widgets/row_column_scroll.dart';
 import 'Test.dart';
 import 'package:mitch_app/widgets/date_time.dart';
 import 'package:mitch_app/widgets/gridview.dart';
@@ -37,7 +38,8 @@ class MyApp extends StatelessWidget {
 
         ),
       ),
-      home: const MyHomePage(),
+      // home: const MyHomePage(),
+      home: const RowColumnScroll(),
       // home: const Listviewlisttile(),
       // home: const Expandedflex(),
       // home: const Test(),
@@ -76,121 +78,6 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Samir', style: TextStyle(color: Colors.black)),
       ),
 
-      // ---------------------------------rows/ column
-      // body: Container(
-      //   width: 300,
-      //   // height: 300,
-      //   child: Column(
-      //     mainAxisAlignment: MainAxisAlignment.start,
-      //     crossAxisAlignment: CrossAxisAlignment.start,
-      //     children: [
-      //       Row(
-      //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //         children: [
-      //         Text('A', style: TextStyle(fontSize: 25)),
-      //         Text('B', style: TextStyle(fontSize: 25)),
-      //         Column(children: [
-      //           ElevatedButton(onPressed: (){
-      //             print('samir');
-      //           }, child: Text("click")),
-      //           ElevatedButton(onPressed: (){
-      //             print('samir');
-      //           }, child: Text("click"))
-      //         ],
-      //         ),
-      //         Text('C', style: TextStyle(fontSize: 25)),
-      //         Text('d', style: TextStyle(fontSize: 25)),
-      //         Text('E', style: TextStyle(fontSize: 25)),
-      //         ElevatedButton(onPressed: (){
-      //           print('samir');
-      //         }, child: Text("click"))
-      //       ],
-      //       ),
-      //       Text('A', style: TextStyle(fontSize: 25)),
-      //       Text('B', style: TextStyle(fontSize: 25)),
-      //       Text('C', style: TextStyle(fontSize: 25)),
-      //       Text('d', style: TextStyle(fontSize: 25)),
-      //       Text('E', style: TextStyle(fontSize: 25)),
-      //       ElevatedButton(onPressed: (){
-      //         print('samir');
-      //       }, child: Text("click"))
-      //     ],
-      //   ),
-      // )
-
-      // -----------------------------------------SingleChildScrollView(column(scroll(3 row),5 container)
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.only(bottom: 10),
-                      height: 200,
-                      width: 200,
-                      child: Text('Samir'),
-                      color: Colors.cyanAccent,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(bottom: 10),
-                      height: 200,
-                      width: 200,
-                      child: Text('Samir'),
-                      color: Colors.lightBlue,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(bottom: 10),
-                      height: 200,
-                      width: 200,
-                      child: Text('Samir'),
-                      color: Colors.lightGreen,
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(bottom: 10),
-                height: 200,
-                width: 500,
-                child: Text('Samir'),
-                color: Colors.cyanAccent,
-              ),
-              Container(
-                margin: const EdgeInsets.only(bottom: 10),
-                height: 200,
-                width: 500,
-                child: Text('Samir'),
-                color: Colors.lightBlue,
-              ),
-              Container(
-                margin: const EdgeInsets.only(bottom: 10),
-                height: 200,
-                width: 500,
-                child: Text('Samir'),
-                color: Colors.lightGreen,
-              ),
-              Container(
-                margin: const EdgeInsets.only(bottom: 10),
-                height: 200,
-                width: 500,
-                child: Text('Samir'),
-                color: Colors.amber,
-              ),
-              Container(
-                margin: const EdgeInsets.only(bottom: 10),
-                height: 200,
-                width: 600,
-                child: Text('Samir'),
-                color: Colors.red,
-              ),
-            ],
-          ),
-        ),
-      ),
 
       // ListView.builder -> no seperator -> required itemextent
       // ListView.seperator -> seperator -> required seperator.builder
