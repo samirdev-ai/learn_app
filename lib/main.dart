@@ -76,39 +76,6 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Samir', style: TextStyle(color: Colors.black)),
       ),
 
-      // -------------------------Button
-      // body: Container(
-      //   color: Colors.lightBlue,
-      //   child: TextButton(
-      //     child: Text("click"),
-      //     onPressed: () {
-      //       print("Understand well!");
-      //     },
-      //     onLongPress: () {
-      //       print('LongPressed!');
-      //     },
-      //   ),
-      // ),
-      // body: ElevatedButton(
-      //   child: Text("what "),
-      //   onPressed: (){
-      //     print("pressed");
-      //   },
-      // body: OutlinedButton(
-      //   child: Text('Samir', ),
-      //   onPressed: (){
-      //     print("samir");
-      //   },
-
-      // -------------------------images
-      // body: Center(
-      //   child: Container(
-      //     width: 100,
-      //     height: 100,
-      //     child: Image.asset("assets/images/img.png"),
-      //   ),
-      // ),
-
       // ---------------------------------rows/ column
       // body: Container(
       //   width: 300,
@@ -151,150 +118,116 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // )
 
-      // -----------------------------------------InkWell
-      // body: Center(
-      //   child: InkWell(
-      //     onTap: () {
-      //       print('ONTAP');
-      //     },
-      //     onLongPress: () {
-      //       print('ONPRESSED');
-      //     },
-      //     onDoubleTap: () {
-      //       print('ONDOUBLETAP');
-      //     },
-      //     child: Container(
-      //       height: 300,
-      //       width: 300,
-      //       color: Colors.lightBlue,
-      //       child: Center(
-      //         child: InkWell(
-      //           onTap: (){
-      //             print('Text Widget Tapped!');
-      //           },
-      //           child: Text(
-      //             'Click here!',
-      //             style: TextStyle(fontSize: 21, fontWeight: FontWeight.w700),
-      //           ),
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      // ),
-
-      // -----------------------------------------SingleChildScrollView
-      // body: Padding(
-      //   padding: const EdgeInsets.all(8.0),
-      //   child: SingleChildScrollView(
-      //     child: Column(
-      //       children: [
-      //         Padding(
-      //           padding: const EdgeInsets.all(8.0),
-      //           child: SingleChildScrollView(
-      //             scrollDirection: Axis.horizontal,
-      //             child: Row(
-      //               children: [
-      //                 Container(
-      //                   margin: const EdgeInsets.only(bottom: 10),
-      //                   height: 200,
-      //                   width: 200,
-      //                   child: Text('Samir'),
-      //                   color: Colors.cyanAccent,
-      //                 ),
-      //                 Container(
-      //                   margin: const EdgeInsets.only(bottom: 10),
-      //                   height: 200,
-      //                   width: 200,
-      //                   child: Text('Samir'),
-      //                   color: Colors.lightBlue,
-      //                 ),
-      //                 Container(
-      //                   margin: const EdgeInsets.only(bottom: 10),
-      //                   height: 200,
-      //                   width: 200,
-      //                   child: Text('Samir'),
-      //                   color: Colors.lightGreen,
-      //                 ),
-      //               ],
-      //             ),
-      //           ),
-      //         ),
-      //         Container(
-      //           margin: const EdgeInsets.only(bottom: 10),
-      //           height: 200,
-      //           width: 500,
-      //           child: Text('Samir'),
-      //           color: Colors.cyanAccent,
-      //         ),
-      //         Container(
-      //           margin: const EdgeInsets.only(bottom: 10),
-      //           height: 200,
-      //           width: 500,
-      //           child: Text('Samir'),
-      //           color: Colors.lightBlue,
-      //         ),
-      //         Container(
-      //           margin: const EdgeInsets.only(bottom: 10),
-      //           height: 200,
-      //           width: 500,
-      //           child: Text('Samir'),
-      //           color: Colors.lightGreen,
-      //         ),
-      //         Container(
-      //           margin: const EdgeInsets.only(bottom: 10),
-      //           height: 200,
-      //           width: 500,
-      //           child: Text('Samir'),
-      //           color: Colors.amber,
-      //         ),
-      //         Container(
-      //           margin: const EdgeInsets.only(bottom: 10),
-      //           height: 200,
-      //           width: 500,
-      //           child: Text('Samir'),
-      //           color: Colors.red,
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
+      // -----------------------------------------SingleChildScrollView(column(scroll(3 row),5 container)
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      height: 200,
+                      width: 200,
+                      child: Text('Samir'),
+                      color: Colors.cyanAccent,
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      height: 200,
+                      width: 200,
+                      child: Text('Samir'),
+                      color: Colors.lightBlue,
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      height: 200,
+                      width: 200,
+                      child: Text('Samir'),
+                      color: Colors.lightGreen,
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 10),
+                height: 200,
+                width: 500,
+                child: Text('Samir'),
+                color: Colors.cyanAccent,
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 10),
+                height: 200,
+                width: 500,
+                child: Text('Samir'),
+                color: Colors.lightBlue,
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 10),
+                height: 200,
+                width: 500,
+                child: Text('Samir'),
+                color: Colors.lightGreen,
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 10),
+                height: 200,
+                width: 500,
+                child: Text('Samir'),
+                color: Colors.amber,
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 10),
+                height: 200,
+                width: 600,
+                child: Text('Samir'),
+                color: Colors.red,
+              ),
+            ],
+          ),
+        ),
+      ),
 
       // ListView.builder -> no seperator -> required itemextent
       // ListView.seperator -> seperator -> required seperator.builder
       // -----------------------------------------------------ListView.builder(itemBuilder: ) -> best for memory recycled
       // body: ListView.builder(itemBuilder: (context, index){         //dynamic data -> store server data in array -> array used in listview.builder -> (context, index)-array index
-      body: ListView.separated(itemBuilder: (context, index) {
-          return Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    Text(arrNames[index], style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500,),),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(arrNames[index], style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500,),),
-                    ),
-                  ],
-                ),
-              ),
-
-              Padding(padding: const EdgeInsets.all(8.0),
-                child: Text(arrNames[index],
-                  style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
-                ),
-              ),
-            ],
-          );
-        },
-        itemCount: arrNames.length,
-        // itemExtent: 200,
-        // scrollDirection:r Axis.horizontal,
-        separatorBuilder: (context, index) {
-          return Divider(height: 4, thickness: 2);
-        },
-        // reverse: true,
-      ),
+      // body: ListView.separated(itemBuilder: (context, index) {
+      //     return Row(
+      //       children: [
+      //         Padding(
+      //           padding: const EdgeInsets.all(8.0),
+      //           child: Column(
+      //             children: [
+      //               Text(arrNames[index], style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500,),),
+      //               Padding(
+      //                 padding: const EdgeInsets.all(8.0),
+      //                 child: Text(arrNames[index], style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500,),),
+      //               ),
+      //             ],
+      //           ),
+      //         ),
+      //
+      //         Padding(padding: const EdgeInsets.all(8.0),
+      //           child: Text(arrNames[index],
+      //             style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
+      //           ),
+      //         ),
+      //       ],
+      //     );
+      //   },
+      //   itemCount: arrNames.length,
+      //   // itemExtent: 200,
+      //   // scrollDirection:r Axis.horizontal,
+      //   separatorBuilder: (context, index) {
+      //     return Divider(height: 4, thickness: 2);
+      //   },
+      //   // reverse: true,
+      // ),
 
       // ---------------------------------------------------ListTile in builder
       // body: ListView.separated(itemBuilder: (context, index) {
