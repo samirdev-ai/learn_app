@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learn_app/widgets/app_bar.dart';
+
 // Expanded / Flexible / Flex /
 class Expandedflex extends StatelessWidget {
   const Expandedflex({super.key});
@@ -7,10 +9,8 @@ class Expandedflex extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          toolbarHeight: 50,
-          backgroundColor: Colors.lightBlueAccent,
-          title: Text('Samir', style: TextStyle(color: Colors.black)),
+        appBar: CommonAppBar(title: 'Samir',
+          showBackButton: false, //no back in home screen
         ),
         body: Column(
           // mainAxisAlignment: MainAxisAlignment.center,

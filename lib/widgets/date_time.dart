@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:learn_app/widgets/app_bar.dart';
 
 class Datetime extends StatefulWidget {
   const Datetime({super.key});
@@ -16,11 +17,10 @@ class _DatetimeState extends State<Datetime> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        toolbarHeight: 50,
-        backgroundColor: Colors.lightBlueAccent,
-        title: Text('Samir', style: TextStyle(color: Colors.black)),
+      appBar: CommonAppBar(title: 'Samir',
+        showBackButton: false, //no back in home screen
       ),
+
       body: Center(
         child: Container(
           color: Colors.grey,

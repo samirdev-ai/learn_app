@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'app_bar.dart';
 
 // ListView - GridView - default scroll
 // .count  -> fix row -> dont use mostly
@@ -18,10 +19,8 @@ class _GridviewState extends State<Gridview> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        toolbarHeight: 50,
-        backgroundColor: Colors.lightBlueAccent,
-        title: Text('Samir', style: TextStyle(color: Colors.black)),
+      appBar: CommonAppBar(title: 'Samir',
+        showBackButton: false, //no back in home screen
       ),
       // _________________________________________________
       // body: Column(

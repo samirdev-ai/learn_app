@@ -2,6 +2,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'app_bar.dart';
+
 class RowColumnScroll extends StatefulWidget {
   const RowColumnScroll({super.key});
 
@@ -16,11 +18,9 @@ class _RowColumnScrollState extends State<RowColumnScroll> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('Samir', style: TextStyle(color: Colors.black)),
-        toolbarHeight: 50,
-        backgroundColor: Colors.lightBlueAccent,
-      ),
+        appBar: CommonAppBar(title: 'Samir',
+          showBackButton: false, //no back in home screen
+        ),
 
       // ---------------------------------rows/ column
       body: Container(

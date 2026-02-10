@@ -3,6 +3,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'app_bar.dart';
+
 class Splittingapp extends StatelessWidget {
   const Splittingapp({super.key});
 
@@ -10,10 +12,8 @@ class Splittingapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('Samir', style: TextStyle(color: Colors.black)),
-        toolbarHeight: 50,
-        backgroundColor: Colors.lightBlueAccent,
+      appBar: CommonAppBar(title: 'Samir',
+        showBackButton: false, //no back in home screen
       ),
       body: SingleChildScrollView(
         child: Column(

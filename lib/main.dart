@@ -7,16 +7,8 @@ import 'dart:ffi';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';    //Datetime
-import 'package:mitch_app/ui_helper/util.dart';
-import 'package:mitch_app/widgets/rounded_btn.dart';
-import 'package:mitch_app/widgets/listview_listtile.dart';
-import 'package:mitch_app/widgets/listview_listtile.dart';
-import 'package:mitch_app/widgets/expanded_flex.dart';
-import 'package:mitch_app/widgets/row_column_scroll.dart';
-import 'Test.dart';
-import 'package:mitch_app/widgets/date_time.dart';
-import 'package:mitch_app/widgets/gridview.dart';
-import 'package:mitch_app/widgets/splittingin_widget.dart';
+import 'package:learn_app/ui_helper/util.dart';
+import 'utils/route_helper.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,31 +30,22 @@ class MyApp extends StatelessWidget {
 
         ),
       ),
+      routes: RouteHelper.myRoutes(),
+      onGenerateRoute: (setting) => RouteHelper.myGenerateRoutes(setting),
       // home: const MyHomePage(),
-      home: const RowColumnScroll(),
-      // home: const Listviewlisttile(),
-      // home: const Expandedflex(),
-      // home: const Test(),
-      // home: const Datetime(),
-      // home: const Gridview(),
-      // home: const Splittingapp(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
-
 class _MyHomePageState extends State<MyHomePage> {
-
   callBack() {
     print('Clicked');
   }
-
   @override
   Widget build(BuildContext context) {
     // ListView Builder
@@ -116,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //   // reverse: true,
       // ),
 
-      // ---------------------------------------------------ListTile in builder
+      // ---------------------------------------------------ListTile in Listview builder
       // body: ListView.separated(itemBuilder: (context, index) {
       //   return ListTile(
       //     leading: Text('${index+1}'),
@@ -171,43 +154,17 @@ class _MyHomePageState extends State<MyHomePage> {
       //       )),
       // ),
 
-      // create a custom widget____________________________import 'widgets/rounded_btn';
-      // body: Center(
-      //   child: Column(
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: [
-      //       Container(width: 100,
-      //         child: RoundedButton(btnName: 'Play', icon: Icon(Icons.play_arrow),textStyle: mTextStyle21(),
-      //           callBack: () {
-      //             print('Playing');
-      //           },
-      //         ),
-      //       ),
-      //       Container(height: 11),
-      //       Container(width: 100,
-      //         child: RoundedButton(btnName: 'Press',bgColor: Colors.orange, textStyle: mTextStyle21(),
-      //           callBack: () {
-      //             print('Pressed');
-      //           },
-      //         ),
-      //       ),
-      //     ],
-      //   ),
-      // ),
+
 
       // body: SingleChildScrollView(
       //     child: Column(
       //       children: [
-      //         // Container(height: 400, width: double.infinity, child: Wrapp()),
-      //         // Container(height: 400, width: double.infinity, child: Splitting()),
-      //         Container(height: 400, width: double.infinity, child: RoundedButton(btnName: 'Login', icon: Icon(Icons.lock), callBack: (){
-      //           print('Logged in!');
-      //         }, textStyle: mTextStyle31(),)),
-      //         // Container(height: 400, width: double.infinity, child: Textfield()),
-      //         // Container(height: 400, width: double.infinity, child: FormValid()),
-      //         // Container(height: 400, width: double.infinity, child: GesturInkwel()),
-      //         // Container(height: 400, width: double.infinity, child: Datepickerr()),
-      //         // Container(height: 400, width: double.infinity, child: Stackk()),                //Stackk() -> object
+      //         Container(height: 400, width: double.infinity, child: Wrapp()),
+      //         Container(height: 400, width: double.infinity, child: Textfield()),
+      //         Container(height: 400, width: double.infinity, child: FormValid()),
+      //         Container(height: 400, width: double.infinity, child: GesturInkwel()),
+      //         Container(height: 400, width: double.infinity, child: Datepickerr()),
+      //         Container(height: 400, width: double.infinity, child: Stackk()),                //Stackk() -> object
       //       ],
       //   ),
       // ),
@@ -226,177 +183,17 @@ class GesturInkwel extends StatelessWidget {
       children: [
         GestureDetector(                 //no effect more properties
           onTap: (){                     //onlong/doubletap
-            print('Clicked =======================================>');
+            print('Clicked --------------------->');
           },
           child: Text('Click!', style: TextStyle(fontSize: 30, color: Colors.blueAccent),),
         ),
         InkWell(                         //effect but less properties
           onTap: (){                     //onlong/doubletap
-            print('Clicked =======================================>');
+            print('Clicked ----------------------->');
           },
           child: Text('Click!', style: TextStyle(fontSize: 30, color: Colors.blueAccent),),
         )
       ],
-    );
-  }
-}
-
-// Form(key,TextFormField(validator))           (spread)
-class FormValid extends StatefulWidget {
-  const FormValid({super.key});
-
-  @override
-  State<FormValid> createState() => FormValidState();
-}
-class FormValidState extends State<FormValid> {
-  TextEditingController name = TextEditingController();
-  TextEditingController phone = TextEditingController();
-  TextEditingController email = TextEditingController();
-  TextEditingController pass = TextEditingController();
-  final formKey = GlobalKey<FormState>();
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      key: formKey,
-      child: Column(
-        spacing: 15,
-        children: [
-          TextFormField(
-            controller: name,
-            decoration:InputDecoration(
-              hintText: 'name',
-            ),
-            validator: (value){
-              if(value == null || value.isEmpty){
-                return 'Please enter Name';
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            controller: phone,
-            decoration:InputDecoration(
-              hintText: 'phone',
-            ),
-            validator: (value){
-              if(value == null || value.isEmpty){
-                return 'Please enter Phone';
-              }
-              if(value.length!=10) {
-                return 'Length must be 10';
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            controller: email,
-            decoration:InputDecoration(
-              hintText: 'email',
-            ),
-            validator: (value){
-              if(value == null || value.isEmpty){
-                return 'Please enter Email';
-              }
-              if(!value.contains('@gmail.com')) {
-                return 'Invalid email';
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            controller: pass,
-            decoration:InputDecoration(
-              hintText: 'password',
-            ),
-            validator: (value){
-              if(value == null || value.isEmpty){
-                return 'Please enter Pass';
-              }
-              return null;
-            },
-          ),
-          ElevatedButton(onPressed: (){
-            if (formKey.currentState!.validate()){
-              print('Name: ${name.text}');
-              print('phone: ${phone.text}');
-              print('email: ${email.text}');
-              print('pass: ${pass.text}');
-            }
-          }, child: Text('Register'))
-        ],
-      ),
-    );
-  }
-}
-
-// TextField(decoration(hintlabelborder), obscure, suffix/prefixIcon/text)
-class Textfield extends StatefulWidget {
-  const Textfield({super.key});
-
-  @override
-  State<Textfield> createState() => _TextfieldState();
-}
-class _TextfieldState extends State<Textfield> {
-  TextEditingController emailText = TextEditingController();
-  var passText = TextEditingController();
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        width: 300,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(                     //scroll(column(TextField(controller, decoration(border)))
-              keyboardType: TextInputType.text,
-              controller: emailText,
-              // enabled: false,
-              decoration: InputDecoration(
-                hintText: 'Enter Email',
-                labelText: 'Email',
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(21),),  //(focused/ enabledborder/disabledborder/ border)
-                // suffixText: "username exists",
-                suffixIcon: IconButton(onPressed: () => emailText.clear(),
-                    icon: Icon(Icons.close, color: Colors.orange,)),
-                prefixIcon: Icon(Icons.phone, color: Colors.orange,),
-              ),
-            ),
-            Container(height: 11),
-            TextField(
-              obscureText: true,
-              obscuringCharacter: '*',
-              controller: passText,
-              decoration: InputDecoration(
-                hintText: 'Password',
-                labelText: 'Password',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(21),
-                  // borderSide: BorderSide(color: Colors.deepOrange, width: 2),
-                ),
-              ),
-            ),
-            Container(height: 11),
-            TextField(                        // Description
-              maxLines: 7,
-              decoration: InputDecoration(
-                hintText: 'Description',
-                labelText: 'Description...',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(21),
-                  // borderSide: BorderSide(color: Colors.deepOrange, width: 2),
-                ),
-              ),
-            ),
-
-            ElevatedButton(onPressed: () {
-              String uEmail = emailText.text.toString();
-              String uPass = passText.text;
-              print("Email: $uEmail, pass:$uPass");
-            }, child: Text('Login'))
-          ],
-        ),
-      ),
     );
   }
 }
@@ -425,67 +222,6 @@ class Wrapp extends StatelessWidget {
         Container(width: 100, height: 100, color: Colors.red),
         Container(width: 100, height: 100, color: Colors.red),
       ],
-    );
-  }
-}
-
-// overlay one widget into another widget
-// Stack(positioneds) -> (uses)give position to widget
-class Stackk extends StatelessWidget {
-  const Stackk({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(11),
-      width: 300,
-      height: 300,
-      color: Colors.orange,
-      child: Stack(
-        children: [
-          Positioned(left: 21,right: 21,
-            child: Container(width: 200, height: 200, color: Colors.blueGrey),
-          ),
-          Positioned(left: 30, right: 30,
-            child: Container(width: 160, height: 160, color: Colors.green),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-// DateTime? -> return type -> TimeOfDay?
-class Datepickerr extends StatelessWidget {
-  const Datepickerr({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('Select Date', style: TextStyle(fontSize: 25),),
-          ElevatedButton(onPressed: () async {                               //2/7/2026 & async -> time taking process to select date
-            DateTime? datePicked = await showDatePicker(context: context,        //(?)-> user may not select any date
-                initialDate: DateTime.now(),        //current time
-                firstDate: DateTime(2026),
-                lastDate: DateTime(2028));
-            if (datePicked != null) {
-              print('Date selected: ${datePicked.day}-${datePicked
-                  .month}-${datePicked.year}');
-            }
-          }, child: Text('Show')),
-          ElevatedButton(onPressed: () async {                              //1:16:35
-            TimeOfDay? pickedTime = await showTimePicker(context: context,
-                initialTime: TimeOfDay.now(),
-                initialEntryMode: TimePickerEntryMode.dial);
-            if (pickedTime != null) {
-              print('Time selected: ${pickedTime.hour}:${pickedTime.minute}');
-            }
-          }, child: Text('Select Time'))
-        ],
-      ),
     );
   }
 }
