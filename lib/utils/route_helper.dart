@@ -17,7 +17,9 @@ import '../widgets/date_picker.dart';
 import '../widgets/form_valid.dart';
 import '../widgets/gestur_inkwell.dart';
 import '../widgets/stack.dart';
+import '../widgets/range_slider.dart';
 import '../widgets/text_field.dart';
+import '../widgets/animation_screen.dart';
 
 class RouteHelper {
   static String home = '/';
@@ -36,8 +38,10 @@ class RouteHelper {
   static const String gesturinkwell = '/GesturInkwel';
   static const String stack = '/Stackk';
   static const String textfield = '/Textfield';
+  static const String rangeslider = '/Rangeslider';
+  static const String animation = '/AdvancedAnimation';
+
   static myRoutes() => {
-    // '/': (context) => HomeScreen(),
     // '/': (context) => ContainerScreen(),
     '/': (context) => HomeScreen(),
   };
@@ -103,6 +107,15 @@ class RouteHelper {
       case datepicker: {
         String name = setting.arguments as String;
         return MaterialPageRoute(builder: (context) => DatePicker());
+      }
+      case animation: {
+        String name = setting.arguments as String;
+        return MaterialPageRoute(builder: (context) => AdvancedAnimation());
+      }
+
+      case rangeslider: {
+        String name = setting.arguments as String;
+        return MaterialPageRoute(builder: (context) => Rangeslider());
       }
 
     }
