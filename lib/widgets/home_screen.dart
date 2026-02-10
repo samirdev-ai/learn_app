@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
               Navigator.pushNamed(context, RouteHelper.listviewtile, arguments: 'Samir');
             }, child: Text('Go to Listtile')),
             ElevatedButton(onPressed: () {
-              Navigator.pushNamed(context, RouteHelper.roundedbtn, arguments: 'Samir');
+              Navigator.pushNamed(context, RouteHelper.roundedbutton, arguments: 'Samir');
             }, child: Text('Go to RoundedButton')),
             ElevatedButton(onPressed: () {
               Navigator.pushNamed(context, RouteHelper.rowcolscroll, arguments: 'Samir');

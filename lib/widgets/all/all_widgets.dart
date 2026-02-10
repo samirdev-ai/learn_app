@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';      //font_awesome package -> FaIcon
 import 'package:learn_app/widgets/app_bar.dart';
+import '../../utils/route_helper.dart';
 
 class Widg extends StatefulWidget {
   final String name;
@@ -23,26 +24,35 @@ class _WidgState extends State<Widg> {
       ),
 
       // // _____________________________________RichText + TextSpan -> multiple text line in a same line
-      body: RichText(text: TextSpan(style: TextStyle(color: Colors.grey, fontSize: 16),
-        children: <TextSpan>[
-          TextSpan(text: 'Hello  ',),
-          TextSpan(text: 'World! ', style: TextStyle(fontSize: 34, color: Colors.blue, fontWeight: FontWeight.bold)),
-          TextSpan(text: 'Welcome to  '),
-          TextSpan(text: 'Flutter! ', style: TextStyle(fontSize: 43, color: Colors.pink, fontWeight: FontWeight.bold, fontFamily: 'FontMain')),
-
-        ]
-      )),
+      // body: RichText(text: TextSpan(style: TextStyle(color: Colors.grey, fontSize: 16),
+      //   children: <TextSpan>[
+      //     TextSpan(text: 'Hello  ',),
+      //     TextSpan(text: 'World! ', style: TextStyle(fontSize: 34, color: Colors.blue, fontWeight: FontWeight.bold)),
+      //     TextSpan(text: 'Welcome to  '),
+      //     TextSpan(text: 'Flutter! ', style: TextStyle(fontSize: 43, color: Colors.pink, fontWeight: FontWeight.bold, fontFamily: 'FontMain')),
+      //
+      //   ]
+      // )),
 
       // _______________________________________font Awesome Icon
-      // body: Center(
-      //   child: Row(
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: [
-      //       Icon(Icons.lock, color: Colors.deepPurple, size: 80,),
-      //       FaIcon(FontAwesomeIcons.amazon, size: 80, color: Colors.deepPurple,),
-      //     ],
-      //   ),
-      // ),
+      body: Center(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.lock, color: Colors.deepPurple, size: 80,),
+              FaIcon(FontAwesomeIcons.amazon, size: 80, color: Colors.deepPurple,),
+              ElevatedButton(onPressed: () {
+                Navigator.pushNamed(context, RouteHelper.splittinginwidget, arguments: 'Samir');
+              }, child: Text('Go to Splitting app in widget')),
+              ElevatedButton(onPressed: () {
+                Navigator.pushNamed(context, RouteHelper.home, arguments: 'Samir');
+              }, child: Text('Go to Home Screen')),
+            ],
+          ),
+        ),
+      ),
 
       //_______________________________________Positioned -> space from top, left, right, bottom
       // body: Container(width: 300, height: 200, color: Colors.blueGrey,

@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 
+import '../utils/route_helper.dart';
 import 'app_bar.dart';
 
 class Splittingapp extends StatelessWidget {
@@ -18,11 +19,13 @@ class Splittingapp extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            ElevatedButton(onPressed: () {
+              Navigator.pushNamed(context, RouteHelper.home, arguments: 'Samir');
+            }, child: Text('Go to Home Screen')),
             Container(height: 150, width: double.infinity, child: CatItems()),
             Container(height: 400, width: double.infinity, child: Contact()),
             Container(height: 100, width: double.infinity, child: SubCatItems()),
             Container(height: 400, width: double.infinity, child: BottomMenu()),
-
           ],
         ),
       ),

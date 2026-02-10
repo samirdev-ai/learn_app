@@ -1,14 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:learn_app/widgets/all/rounded_button.dart';
 import '../widgets/all/all_widgets.dart';
 import '../widgets/all/bmi_app.dart';
 import '../widgets/all/counter.dart';
+import '../widgets/all/rounded_button.dart';
 import '../widgets/date_time.dart';
 import '../widgets/expanded_flex.dart';
 import '../widgets/gridview.dart';
 import '../widgets/home_screen.dart';
 import '../widgets/listview_listtile.dart';
-import '../widgets/rounded_btn.dart';
+// import '../widgets/rounded_btn.dart';
 import '../widgets/row_column_scroll.dart';
 import '../widgets/splittingin_widget.dart';
 import '../widgets/date_picker.dart';
@@ -26,7 +28,7 @@ class RouteHelper {
   static const String expandedflex = '/Expandedflex';
   static const String gridview = '/Gridview';
   static const String listviewtile = '/Listviewlisttile';
-  static const String roundedbtn = '/RoundedButton';
+  static const String roundedbutton = '/RoundedButton';
   static const String rowcolscroll = '/RowColumnScroll';
   static const String datepicker = '/DatePicker';
   static const String splittinginwidget = '/Splittingapp';
@@ -70,10 +72,10 @@ class RouteHelper {
         String name = setting.arguments as String;
         return MaterialPageRoute(builder: (context) => Listviewlisttile());
       }
-      // case roundedbtn: {
-      //   String name = setting.arguments as String;
-      //   return MaterialPageRoute(builder: (context) => RoundedButton(btnName: name));
-      // }
+      case roundedbutton: {
+        String name = setting.arguments as String;
+        return MaterialPageRoute(builder: (context) => RoundedButton());
+      }
       case rowcolscroll: {
         String name = setting.arguments as String;
         return MaterialPageRoute(builder: (context) => RowColumnScroll());
