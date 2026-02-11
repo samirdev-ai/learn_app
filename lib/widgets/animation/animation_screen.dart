@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'app_bar.dart';
+import '../app_bar.dart';
 //
 // class AdvancedAnimation extends StatefulWidget {
 //   const AdvancedAnimation({super.key});
@@ -246,3 +246,6 @@ class DetailScreen extends StatelessWidget {
     );
   }
 }
+
+
+// Inkwell(tap(navigator) + child(hero animation(tag+image))) - main.dart -> same hero widget apply on screen to open

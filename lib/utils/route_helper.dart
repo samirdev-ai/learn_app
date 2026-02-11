@@ -5,6 +5,8 @@ import '../widgets/all/all_widgets.dart';
 import '../widgets/all/bmi_app.dart';
 import '../widgets/all/counter.dart';
 import '../widgets/all/rounded_button.dart';
+import '../widgets/animation/animated_bottomnav.dart';
+import '../widgets/animation/ripple_effect.dart';
 import '../widgets/date_time.dart';
 import '../widgets/expanded_flex.dart';
 import '../widgets/gridview.dart';
@@ -19,7 +21,7 @@ import '../widgets/gestur_inkwell.dart';
 import '../widgets/stack.dart';
 import '../widgets/range_slider.dart';
 import '../widgets/text_field.dart';
-import '../widgets/animation_screen.dart';
+import '../widgets/animation/animation_screen.dart';
 
 class RouteHelper {
   static String home = '/';
@@ -40,6 +42,8 @@ class RouteHelper {
   static const String textfield = '/Textfield';
   static const String rangeslider = '/Rangeslider';
   static const String animation = '/AdvancedAnimation';
+  static const String rippleeffect = '/WaterRippleAnimation';
+  static const String animatedbottomnav = '/AnimatedBottomNav';
 
   static myRoutes() => {
     // '/': (context) => ContainerScreen(),
@@ -111,6 +115,14 @@ class RouteHelper {
       case animation: {
         String name = setting.arguments as String;
         return MaterialPageRoute(builder: (context) => AdvancedAnimation());
+      }
+      case rippleeffect: {
+        String name = setting.arguments as String;
+        return MaterialPageRoute(builder: (context) => WaterRippleAnimation());
+      }
+      case animatedbottomnav: {
+        String name = setting.arguments as String;
+        return MaterialPageRoute(builder: (context) => AnimatedBottomNav());
       }
 
       case rangeslider: {

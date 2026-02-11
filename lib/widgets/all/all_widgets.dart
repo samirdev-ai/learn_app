@@ -14,6 +14,7 @@ class Widg extends StatefulWidget {
 }
 
 class _WidgState extends State<Widg> {
+  List list = [1,2,3,4,5,6,7,8,9,10];
   var time = DateTime.now();
   @override
   Widget build(BuildContext context) {
@@ -35,24 +36,24 @@ class _WidgState extends State<Widg> {
       // )),
 
       // _______________________________________font Awesome Icon
-      body: Center(
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.lock, color: Colors.deepPurple, size: 80,),
-              FaIcon(FontAwesomeIcons.amazon, size: 80, color: Colors.deepPurple,),
-              ElevatedButton(onPressed: () {
-                Navigator.pushNamed(context, RouteHelper.splittinginwidget, arguments: 'Samir');
-              }, child: Text('Go to Splitting app in widget')),
-              ElevatedButton(onPressed: () {
-                Navigator.pushNamed(context, RouteHelper.home, arguments: 'Samir');
-              }, child: Text('Go to Home Screen')),
-            ],
-          ),
-        ),
-      ),
+      // body: Center(
+      //   child: SingleChildScrollView(
+      //     scrollDirection: Axis.horizontal,
+      //     child: Row(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: [
+      //         Icon(Icons.lock, color: Colors.deepPurple, size: 80,),
+      //         FaIcon(FontAwesomeIcons.amazon, size: 80, color: Colors.deepPurple,),
+      //         ElevatedButton(onPressed: () {
+      //           Navigator.pushNamed(context, RouteHelper.splittinginwidget, arguments: 'Samir');
+      //         }, child: Text('Go to Splitting app in widget')),
+      //         ElevatedButton(onPressed: () {
+      //           Navigator.pushNamed(context, RouteHelper.home, arguments: 'Samir');
+      //         }, child: Text('Go to Home Screen')),
+      //       ],
+      //     ),
+      //   ),
+      // ),
 
       //_______________________________________Positioned -> space from top, left, right, bottom
       // body: Container(width: 300, height: 200, color: Colors.blueGrey,
@@ -76,6 +77,24 @@ class _WidgState extends State<Widg> {
       // // ),
       //   child: ElevatedButton(onPressed: (){}, child: Text('click')),
       // ),
+
+      // _____________________________________List wheel scroll view
+      body: Center(
+        child: ListWheelScrollView(itemExtent: 200, children: list.map((value){
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              child: Center(child: Text('$value',style: TextStyle(fontSize: 21, color: Colors.white),),),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(21)
+            ),
+            width: double.infinity,
+            ),
+          );
+        }).toList(),
+        ),
+      ),
     );
   }
 }

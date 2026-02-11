@@ -66,6 +66,12 @@ class HomeScreen extends StatelessWidget {
               ElevatedButton(onPressed: () {
                 Navigator.pushNamed(context, RouteHelper.animation, arguments: 'Samir');
               }, child: Text('Go to Animation')),
+              ElevatedButton(onPressed: () {
+                Navigator.pushNamed(context, RouteHelper.rippleeffect, arguments: 'Samir');
+              }, child: Text('Go to Ripple Effect')),
+              ElevatedButton(onPressed: () {
+                Navigator.pushNamed(context, RouteHelper.animatedbottomnav, arguments: 'Samir');
+              }, child: Text('Go to Animated Bottom Nav')),
 
               ElevatedButton(onPressed: () {
                 Navigator.pushNamed(context, RouteHelper.splittinginwidget, arguments: 'Samir');
